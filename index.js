@@ -1,6 +1,4 @@
-const express = require('express');
-const app = express();
+const custonExpress = require('./config/custonExpress');
 
+const app = custonExpress();
 app.listen(3000, () => console.log('Servidor rorando na porta 3000'))
-
-app.get('/atendimentos', (req, res)=> res.send('você está na rota atendimentos'))
