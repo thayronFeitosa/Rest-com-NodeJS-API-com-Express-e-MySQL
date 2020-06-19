@@ -12,11 +12,17 @@ module.exports = app =>{
 
     })
 
-
-
     app.post('/atendimentos', (req, res) => 
     {   
         const atendimento = req.body;
         Atendimentos.adiciona(atendimento, res)
+    })
+
+    app.patch('/atendimentos/:id', (req, res) =>{
+       
+        const id = parseInt(req.params.id);
+        const valores = req.body;
+
+        Atendimentos.altera(id, valores, res);
     })
 }
