@@ -54,6 +54,19 @@ class Atendimento{
             }else{
                 res.status(200).json(resultados)
             }
+        });
+    }
+
+    buscarPorId(id, res){
+        const sql = `SELECT * FROM atendimentos WHERE id=${id}`;
+
+        conexao.query(sql , (erro, resultado)=>{
+            const atendimento = resultado[0];
+            if(erro){
+                res.status(404).json(erro);
+            }else{
+                res.status(202).json(atendimento);
+            }
         })
     }
 }

@@ -6,6 +6,12 @@ module.exports = app =>{
         Atendimentos.lista(res);
     });
 
+    app.get('/atendimentos/:id', (req, res) =>{
+        const id = parseInt(req.params.id);
+        Atendimentos.buscarPorId(id, res);
+
+    })
+
 
 
     app.post('/atendimentos', (req, res) => 
