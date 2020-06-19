@@ -1,7 +1,10 @@
 const Atendimentos = require('../model/atendimentos')
 module.exports = app =>{
     
-    app.get('/atendimentos', (req, res)=> {res.send('você está na rota atendimentos')});
+    app.get('/atendimentos', (req, res)=> 
+    {
+        Atendimentos.lista(res);
+    });
 
 
 
